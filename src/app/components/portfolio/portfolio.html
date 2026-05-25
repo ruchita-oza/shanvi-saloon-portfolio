@@ -1,0 +1,79 @@
+<section id="portfolio" class="portfolio-section">
+  <div class="portfolio-container">
+    <!-- Header -->
+    <div class="section-header reveal">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-heading">Portfolio</h2>
+      <div class="gold-divider"><span class="ornament">✦</span></div>
+      <p class="section-sub">Every bride is our masterpiece. Every mehendi tells a story.</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="filter-tabs reveal">
+      <button
+        *ngFor="let cat of categories"
+        (click)="setCategory(cat)"
+        [class.active]="activeCategory === cat"
+        class="filter-btn"
+      >{{ cat }}</button>
+    </div>
+
+    <!-- Masonry Gallery -->
+    <div class="masonry-grid">
+      <div
+        *ngFor="let item of filteredItems"
+        class="masonry-item reveal"
+        [class.masonry-item--tall]="item.tall"
+        (click)="openLightbox(item)"
+      >
+        <img [src]="item.img" [alt]="item.title" class="masonry-img" loading="lazy" />
+        <div class="masonry-overlay">
+          <div class="masonry-info">
+            <span class="masonry-category">{{ item.category }}</span>
+            <h4 class="masonry-title">{{ item.title }}</h4>
+            <div class="masonry-zoom">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="portfolio-cta reveal" style="text-align:center; margin-top: 56px;">
+      <p class="portfolio-cta-text">Want to see more of our work?</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+        <a
+          href="https://www.instagram.com/goldenqueenshanvi"
+          target="_blank"
+          class="btn-gold"
+          id="portfolio-instagram"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+          Follow on Instagram
+        </a>
+        <a
+          href="https://wa.me/919876543210?text=I%20want%20to%20book%20an%20appointment"
+          target="_blank"
+          class="btn-outline"
+          id="portfolio-book"
+        >Book Your Session</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div *ngIf="lightboxOpen" class="lightbox" (click)="closeLightbox()">
+    <button class="lightbox-close" (click)="closeLightbox()">✕</button>
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+      <img [src]="lightboxImg" [alt]="lightboxTitle" class="lightbox-img" />
+      <div class="lightbox-caption">
+        <span>{{ lightboxTitle }}</span>
+      </div>
+    </div>
+  </div>
+</section>

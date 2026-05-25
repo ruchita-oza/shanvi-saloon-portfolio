@@ -1,0 +1,215 @@
+.area-section {
+  position: relative;
+  background: linear-gradient(135deg, #1A0E05 0%, #2A1A0A 60%, #1C1208 100%);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.area-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 30% 50%, rgba(201, 169, 110, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 50%, rgba(183, 110, 121, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.area-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.area-description {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  margin: 16px 0 32px;
+  max-width: 460px;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.city-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.3s ease;
+}
+
+.city-item:hover {
+  color: #C9A96E;
+}
+
+.city-dot {
+  color: #C9A96E;
+  font-size: 0.45rem;
+}
+
+.area-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(201, 169, 110, 0.06);
+  border-left: 2px solid #C9A96E;
+}
+
+.area-note-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.area-note p {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Map Visual */
+.area-map {
+  position: relative;
+}
+
+.map-visual {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.map-gujrat {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.area-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.map-visual:hover .area-img {
+  transform: scale(1.05);
+}
+
+.area-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(42, 26, 10, 0.5) 0%,
+    rgba(42, 26, 10, 0.2) 50%,
+    rgba(42, 26, 10, 0.6) 100%
+  );
+}
+
+.map-cities-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.map-city {
+  position: absolute;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(201, 169, 110, 0.9);
+  background: rgba(0,0,0,0.4);
+  padding: 4px 8px;
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.map-pin {
+  position: absolute;
+  bottom: 30%;
+  right: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.pin-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #C9A96E;
+  box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.pin-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(201, 169, 110, 0.2);
+  animation: pin-pulse 2s ease-in-out infinite;
+}
+
+@keyframes pin-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+.pin-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #C9A96E;
+  background: rgba(0,0,0,0.6);
+  padding: 3px 8px;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+}
+
+@media (max-width: 900px) {
+  .area-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .area-map {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .cities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
