@@ -41,7 +41,7 @@ import { FooterComponent } from './components/footer/footer';
 
     <!-- WhatsApp Floating Button -->
     <a
-      href="https://wa.me/919876543210?text=Hello%20Golden%20Queen%20Shanvi!%20I%20would%20like%20to%20book%20an%20appointment."
+      href="https://wa.me/918460975675?text=Hello%20Golden%20Queen%20Shanvi!%20I%20would%20like%20to%20book%20an%20appointment."
       target="_blank"
       class="whatsapp-fab"
       aria-label="Chat on WhatsApp"

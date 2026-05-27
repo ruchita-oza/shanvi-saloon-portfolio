@@ -58,8 +58,13 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #2A2A2A;
+  color: #fff;
   letter-spacing: 0.5px;
+  transition: color 0.4s ease;
+}
+
+.navbar.scrolled .logo-name {
+  color: #2A2A2A;
 }
 
 .logo-tagline {
@@ -86,11 +91,15 @@
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #2A2A2A;
+  color: #fff;
   cursor: pointer;
   padding: 8px 12px;
   position: relative;
   transition: color 0.3s ease;
+}
+
+.navbar.scrolled .nav-links li button {
+  color: #2A2A2A;
 }
 
 .nav-links li button::after {
@@ -151,9 +160,13 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: #2A2A2A;
+  background: #fff;
   transition: all 0.3s ease;
   transform-origin: center;
+}
+
+.navbar.scrolled .hamburger span {
+  background: #2A2A2A;
 }
 
 .hamburger.active span:nth-child(1) {
