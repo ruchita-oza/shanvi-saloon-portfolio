@@ -7,7 +7,7 @@
 .portfolio-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px; /* tighter padding on mobile */
 }
 
 .section-header {
@@ -75,6 +75,19 @@
   overflow: hidden;
   cursor: pointer;
   display: block;
+  opacity: 0;
+  animation: masonryFadeIn 0.6s ease forwards;
+}
+
+@keyframes masonryFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .masonry-item--tall .masonry-img {
@@ -228,13 +241,28 @@
 }
 
 @media (max-width: 900px) {
+  .portfolio-section {
+    padding: 50px 0;
+  }
+  .section-header {
+    margin-bottom: 30px;
+  }
   .masonry-grid {
     columns: 2;
+    column-gap: 8px; /* Tighter gap */
+  }
+  .masonry-item {
+    margin-bottom: 8px; /* Tighter gap */
   }
 }
 
 @media (max-width: 600px) {
+  /* Keep 2 columns on mobile to reduce image heights and show more above the fold */
   .masonry-grid {
-    columns: 1;
+    columns: 2;
+    column-gap: 8px;
+  }
+  .masonry-item {
+    margin-bottom: 8px;
   }
 }

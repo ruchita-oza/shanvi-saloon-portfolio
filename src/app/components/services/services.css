@@ -221,15 +221,49 @@
 }
 
 @media (max-width: 900px) {
+  .services-section {
+    padding: 50px 0;
+  }
+  .section-header {
+    margin-bottom: 30px;
+  }
   .services-grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 100%;
+    margin: 0;
+  }
+  .service-card {
+    padding: 20px 16px;
+  }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+  .service-name {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  .service-divider {
+    margin: 8px auto;
+  }
+  .service-list {
+    margin-bottom: 16px;
+    gap: 6px;
+  }
+  .service-list li {
+    font-size: 0.75rem;
   }
   .service-card--featured {
     transform: none;
   }
   .service-card--featured:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+  }
+  /* Make the 3rd card span 2 columns to balance the bottom row perfectly */
+  .service-card:nth-child(3) {
+    grid-column: 1 / span 2;
   }
 }

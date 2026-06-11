@@ -1,115 +1,383 @@
-<section id="packages" class="packages-section">
-  <div class="packages-bg-overlay"></div>
-  <div class="packages-container">
+<section id="packages" class="pricing-section">
+  <div class="pricing-bg-decor"></div>
+  <div class="pricing-container">
+    
     <!-- Header -->
-    <div class="section-header reveal">
-      <span class="section-label">Investment in Beauty</span>
-      <h2 class="section-heading" style="color:#fff;">Our Packages</h2>
-      <div class="gold-divider"><span class="ornament">✦</span></div>
-      <p class="section-sub" style="color:rgba(255,255,255,0.65);">Thoughtfully curated packages for every occasion and celebration.</p>
+    <div class="pricing-header">
+      <span class="pricing-subtitle">Valid for 2026 – 2027 Bridal Bookings</span>
+      <h2 class="pricing-title">Bridal Packages & Price List</h2>
+      <div class="floral-divider">
+        <span class="floral-icon">❀</span>
+      </div>
     </div>
 
-    <div class="packages-columns">
-      <!-- Bridal Packages -->
-      <div class="package-group reveal-left">
-        <div class="package-group-header">
-          <span class="pkg-icon">💄</span>
-          <h3>Bridal Packages</h3>
+    <!-- Notice Card -->
+    <div class="notice-card glass-card">
+      <div class="notice-item">
+        <span class="notice-icon">📍</span>
+        <span>Based in Dhari, Amreli & Rajkot</span>
+      </div>
+      <div class="notice-divider"></div>
+      <div class="notice-item">
+        <span class="notice-icon">🚗</span>
+        <span>Available Across Gujarat for Bridal Bookings</span>
+      </div>
+    </div>
+
+    <!-- Engagement & Baby Shower Packages -->
+    <div class="pricing-category">
+      <h3 class="category-title">Engagement & Baby Shower Packages</h3>
+      <div class="floral-divider-small"></div>
+      
+      <div class="cards-grid cols-3">
+        <!-- Card 1 -->
+        <div class="price-card glass-card accordion-card" [class.expanded]="openAccordionId === 'eng-1'">
+          <div class="card-header" (click)="toggleAccordion('eng-1')">
+            <div class="header-main">
+              <h4>Basic Makeup Package</h4>
+              <div class="price">₹4,000</div>
+            </div>
+            <div class="accordion-icon">▼</div>
+          </div>
+          <div class="card-body">
+            <ul class="includes-list">
+              <li><span class="check">✓</span> Basic Makeup</li>
+              <li><span class="check">✓</span> Hairstyling</li>
+              <li><span class="check">✓</span> Jewellery Setting</li>
+              <li><span class="check">✓</span> Wax (Hands & Legs)</li>
+            </ul>
+          </div>
         </div>
-        <div class="package-cards">
-          <div class="package-card">
-            <div class="pkg-card-icon">👰</div>
-            <div class="pkg-card-info">
-              <h4>Bridal Wedding Package</h4>
-              <p>Complete bridal look for your wedding day</p>
+
+        <!-- Card 2 -->
+        <div class="price-card glass-card accordion-card highlight-card" [class.expanded]="openAccordionId === 'eng-2'">
+          <div class="card-badge">Most Popular</div>
+          <div class="card-header" (click)="toggleAccordion('eng-2')">
+            <div class="header-main">
+              <h4>HD Makeup Package</h4>
+              <div class="price">₹6,500</div>
             </div>
+            <div class="accordion-icon">▼</div>
           </div>
-          <div class="package-card">
-            <div class="pkg-card-icon">💍</div>
-            <div class="pkg-card-info">
-              <h4>Engagement Package</h4>
-              <p>Elegant look for your ring ceremony</p>
-            </div>
+          <div class="card-body">
+            <ul class="includes-list">
+              <li><span class="check">✓</span> HD Makeup</li>
+              <li><span class="check">✓</span> Hairstyling</li>
+              <li><span class="check">✓</span> Jewellery Setting</li>
+              <li><span class="check">✓</span> Basic Skincare</li>
+              <li><span class="check">✓</span> Wax (Hands & Legs)</li>
+              <li><span class="check">✓</span> Bleach, Shiner & Detan</li>
+              <li><span class="check">✓</span> Grooming</li>
+            </ul>
           </div>
-          <div class="package-card">
-            <div class="pkg-card-icon">🌸</div>
-            <div class="pkg-card-info">
-              <h4>Haldi / Jal Package</h4>
-              <p>Glowing natural look for pre-wedding rituals</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="price-card glass-card accordion-card" [class.expanded]="openAccordionId === 'eng-3'">
+          <div class="card-header" (click)="toggleAccordion('eng-3')">
+            <div class="header-main">
+              <h4>International / Airbrush</h4>
+              <div class="price">₹8,500</div>
             </div>
+            <div class="accordion-icon">▼</div>
           </div>
-          <div class="package-card">
-            <div class="pkg-card-icon">🍼</div>
-            <div class="pkg-card-info">
-              <h4>Baby Shower Package</h4>
-              <p>Beautiful mommy-to-be glam look</p>
-            </div>
+          <div class="card-body">
+            <ul class="includes-list">
+              <li><span class="check">✓</span> Airbrush Makeup</li>
+              <li><span class="check">✓</span> Hairstyling</li>
+              <li><span class="check">✓</span> Jewellery Setting</li>
+              <li><span class="check">✓</span> Facial</li>
+              <li><span class="check">✓</span> Bleach, Shiner & Detan</li>
+              <li><span class="check">✓</span> Wax (Hands & Legs)</li>
+            </ul>
           </div>
-          <div class="package-card">
-            <div class="pkg-card-icon">👨‍👩‍👧</div>
-            <div class="pkg-card-info">
-              <h4>Family / Sider Makeup</h4>
-              <p>Coordinated looks for family members</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Co-Bride Packages -->
+    <div class="pricing-category">
+      <h3 class="category-title">Co-Bride Packages</h3>
+      <div class="floral-divider-small"></div>
+      
+      <div class="cards-grid cols-3">
+        <div class="price-item glass-card">
+          <div class="item-info"><h5>Basic Makeup + Straight Hairstyle</h5></div>
+          <div class="item-price">₹2,000</div>
+        </div>
+        <div class="price-item glass-card">
+          <div class="item-info"><h5>Basic Makeup + Curls Hairstyle</h5></div>
+          <div class="item-price">₹2,500</div>
+        </div>
+        <div class="price-item glass-card">
+          <div class="item-info"><h5>Basic Makeup + Braid Hairstyle</h5></div>
+          <div class="item-price">₹3,000</div>
+        </div>
+        <div class="price-item glass-card">
+          <div class="item-info"><h5>Simple Bun / Straight Hairstyle</h5></div>
+          <div class="item-price">₹500</div>
+        </div>
+        <div class="price-item glass-card">
+          <div class="item-info"><h5>Simple Curls Hairstyle</h5></div>
+          <div class="item-price">₹750</div>
+        </div>
+        <div class="price-item glass-card">
+          <div class="item-info"><h5>Complex Hairstyle</h5></div>
+          <div class="item-price">₹1,500</div>
+        </div>
+      </div>
+
+      <div class="cards-grid cols-1" style="margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <div class="price-card glass-card accordion-card" [class.expanded]="openAccordionId === 'co-1'">
+          <div class="card-header" (click)="toggleAccordion('co-1')">
+            <div class="header-main">
+              <h4>HD Makeup Package</h4>
+              <div class="price">₹4,000</div>
             </div>
+            <div class="accordion-icon">▼</div>
+          </div>
+          <div class="card-body">
+            <ul class="includes-list">
+              <li><span class="check">✓</span> HD Makeup</li>
+              <li><span class="check">✓</span> Hairstyling</li>
+              <li><span class="check">✓</span> Jewellery Setting</li>
+              <li><span class="check">✓</span> Basic Skincare</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bridal Packages -->
+    <div class="pricing-category">
+      <h3 class="category-title">Bridal Packages</h3>
+      <div class="floral-divider-small"></div>
+      
+      <!-- 1 Bridal Look -->
+      <div class="tier-card glass-card">
+        <div class="tier-header">
+          <h3 class="tier-title">1 Bridal Look</h3>
+          <p class="tier-includes">Includes: Hairstyling • Jewellery Setting • Skincare • Full Body Wax • Spa Grooming • Bleach</p>
+        </div>
+        <div class="tier-variants">
+          <div class="variant-row">
+            <div class="variant-details">
+              <h4 class="variant-name">Basic Makeup</h4>
+              <span class="variant-desc">With 1 Standard Facial</span>
+            </div>
+            <div class="variant-price">₹9,000</div>
+          </div>
+          <div class="variant-row variant-premium">
+            <div class="card-badge">⭐ Recommended</div>
+            <div class="variant-details">
+              <h4 class="variant-name">HD Makeup</h4>
+              <span class="variant-desc">With 1 Advanced Facial</span>
+            </div>
+            <div class="variant-price">₹12,500</div>
           </div>
         </div>
       </div>
 
-      <!-- Vertical Divider -->
-      <div class="packages-vdivider reveal">
-        <div class="vdivider-line"></div>
-        <div class="vdivider-icon">♛</div>
-        <div class="vdivider-line"></div>
-      </div>
-
-      <!-- Mehendi Packages -->
-      <div class="package-group reveal-right">
-        <div class="package-group-header">
-          <span class="pkg-icon">🌿</span>
-          <h3>Mehendi Packages</h3>
+      <!-- 2 Bridal Looks -->
+      <div class="tier-card glass-card">
+        <div class="tier-header">
+          <h3 class="tier-title">2 Bridal Looks</h3>
+          <p class="tier-includes">Includes: 2 Makeups • Hairstyling • Jewellery Setting • Skincare • Full Body Wax • Spa Grooming • Bleach</p>
         </div>
-        <div class="package-cards">
-          <div class="package-card package-card--featured">
-            <div class="pkg-card-icon">👰</div>
-            <div class="pkg-card-info">
-              <h4>Bridal Mehendi Package</h4>
-              <p>Full bridal mehendi – both hands & feet</p>
+        <div class="tier-variants">
+          <div class="variant-row">
+            <div class="variant-details">
+              <h4 class="variant-name">Basic Makeup</h4>
+              <span class="variant-desc">With 1 Standard Facial</span>
             </div>
+            <div class="variant-price">₹14,000</div>
           </div>
-          <div class="package-card">
-            <div class="pkg-card-icon">🎉</div>
-            <div class="pkg-card-info">
-              <h4>Festival Mehendi Package</h4>
-              <p>Beautiful designs for Teej, Karva Chauth & more</p>
+          <div class="variant-row variant-premium">
+            <div class="card-badge">⭐ Recommended</div>
+            <div class="variant-details">
+              <h4 class="variant-name">HD Makeup</h4>
+              <span class="variant-desc">With 1 Advanced Facial</span>
             </div>
-          </div>
-          <div class="package-card">
-            <div class="pkg-card-icon">👨‍👩‍👧</div>
-            <div class="pkg-card-info">
-              <h4>Family Mehendi Package</h4>
-              <p>Group mehendi for wedding family members</p>
-            </div>
+            <div class="variant-price">₹18,000</div>
           </div>
         </div>
       </div>
+
+      <!-- 3 Bridal Looks -->
+      <div class="tier-card glass-card">
+        <div class="tier-header">
+          <h3 class="tier-title">3 Bridal Looks</h3>
+          <p class="tier-includes">Includes: 3 Makeups • Hairstyling • Jewellery Setting • Skincare • Full Body Wax • Spa Grooming • Bleach</p>
+        </div>
+        <div class="tier-variants">
+          <div class="variant-row">
+            <div class="variant-details">
+              <h4 class="variant-name">Basic Makeup</h4>
+              <span class="variant-desc">With 2 Standard Facials</span>
+            </div>
+            <div class="variant-price">₹20,500</div>
+          </div>
+          <div class="variant-row variant-premium">
+            <div class="card-badge">⭐ Recommended</div>
+            <div class="variant-details">
+              <h4 class="variant-name">HD Makeup</h4>
+              <span class="variant-desc">With 2 Advanced Facials</span>
+            </div>
+            <div class="variant-price">₹24,000</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Bridal Looks -->
+      <div class="tier-card glass-card">
+        <div class="tier-header">
+          <h3 class="tier-title">4 Bridal Looks</h3>
+          <p class="tier-includes">Includes: 4 Makeups • Hairstyling • Jewellery Setting • Skincare • Full Body Wax • Spa Grooming • Bleach • Manicure & Pedicure</p>
+        </div>
+        <div class="tier-variants">
+          <div class="variant-row variant-premium">
+            <div class="card-badge">⭐ Most Premium</div>
+            <div class="variant-details">
+              <h4 class="variant-name">HD Makeup</h4>
+              <span class="variant-desc">With 2 Advanced Facials</span>
+            </div>
+            <div class="variant-price">₹30,000</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Disclaimer -->
-    <div class="packages-note reveal">
-      <span class="note-icon">✦</span>
-      <p>Packages may vary based on festival, bridal requirements, customization and city. Contact us for custom quotes.</p>
-      <span class="note-icon">✦</span>
+    <!-- Premium International / Airbrush -->
+    <div class="pricing-category">
+      <div class="premium-featured-box">
+        <div class="premium-badge">Most Premium</div>
+        <h3 class="category-title" style="margin-top: 1rem;">Premium International / Airbrush</h3>
+        <div class="floral-divider-small"></div>
+        
+        <div class="cards-grid cols-2">
+          <div class="price-card glass-card accordion-card gold-border" [class.expanded]="openAccordionId === 'premium-1'">
+            <div class="card-header" (click)="toggleAccordion('premium-1')">
+              <div class="header-main">
+                <h4>Package 1</h4>
+                <div class="price">₹32,000</div>
+                <div class="package-name-sub">1 Airbrush Makeup + 2 HD Makeups</div>
+              </div>
+              <div class="accordion-icon">▼</div>
+            </div>
+            <div class="card-body">
+              <ul class="includes-list">
+                <li><span class="check">✓</span> 1 Airbrush Makeup</li>
+                <li><span class="check">✓</span> 2 HD Makeups</li>
+                <li><span class="check">✓</span> Hairstyling & Jewellery Setting</li>
+                <li><span class="check">✓</span> Skincare & Full Body Wax</li>
+                <li><span class="check">✓</span> Spa Grooming</li>
+                <li><span class="check">✓</span> 2 Advanced Facial Sessions</li>
+                <li><span class="check">✓</span> Bleach</li>
+                <li><span class="check">✓</span> Manicure & Pedicure</li>
+                <li><span class="check">✓</span> Fresh Floral Hair Accessories</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="price-card glass-card accordion-card gold-border" [class.expanded]="openAccordionId === 'premium-2'">
+            <div class="card-header" (click)="toggleAccordion('premium-2')">
+              <div class="header-main">
+                <h4>Package 2</h4>
+                <div class="price">₹40,000</div>
+                <div class="package-name-sub">3 International / Airbrush Makeups</div>
+              </div>
+              <div class="accordion-icon">▼</div>
+            </div>
+            <div class="card-body">
+              <ul class="includes-list">
+                <li><span class="check">✓</span> 3 Airbrush Makeups</li>
+                <li><span class="check">✓</span> Hairstyling & Jewellery Setting</li>
+                <li><span class="check">✓</span> Skincare & Full Body Wax</li>
+                <li><span class="check">✓</span> Spa Grooming</li>
+                <li><span class="check">✓</span> 2 Advanced Facial Sessions</li>
+                <li><span class="check">✓</span> Bleach</li>
+                <li><span class="check">✓</span> Manicure & Pedicure</li>
+                <li><span class="check">✓</span> Fresh Floral Hair Accessories</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- CTA -->
-    <div class="packages-cta reveal" style="text-align:center; margin-top:48px;">
-      <a
-        href="https://wa.me/918460975675?text=I%20want%20to%20know%20about%20packages%20at%20Golden%20Queen%20Shanvi"
-        target="_blank"
-        class="btn-gold"
-      >
-        Get Custom Quote on WhatsApp
-      </a>
+    <!-- Additional Services -->
+    <div class="pricing-category">
+      <h3 class="category-title">Additional Services</h3>
+      <div class="floral-divider-small"></div>
+      
+      <div class="cards-grid cols-3">
+        <div class="price-item glass-card">
+          <div class="item-info"><h5>Additional Basic Makeup</h5></div>
+          <div class="item-price">₹4,000</div>
+        </div>
+        <div class="price-item glass-card">
+          <div class="item-info"><h5>Additional HD Makeup</h5></div>
+          <div class="item-price">₹5,500</div>
+        </div>
+        <div class="price-item glass-card">
+          <div class="item-info"><h5>Fresh Floral Hair Accessories</h5></div>
+          <div class="item-price">₹1,500</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Policies -->
+    <div class="policies-section">
+      <div class="cards-grid cols-2">
+        <!-- Payment Policy -->
+        <div class="policy-card glass-card">
+          <h4 class="policy-title">Payment Policy</h4>
+          <div class="policy-item">
+            <div class="policy-percent">20%</div>
+            <div class="policy-text">
+              <strong>Advance Payment</strong>
+              <span>Required to confirm booking.</span>
+            </div>
+          </div>
+          <div class="policy-item">
+            <div class="policy-percent">80%</div>
+            <div class="policy-text">
+              <strong>Remaining Payment</strong>
+              <span>Must be cleared on or before the final event day.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="policy-card glass-card">
+          <h4 class="policy-title">Terms & Conditions</h4>
+          <ul class="terms-list">
+            <li>Valid for 2026–2027 Brides</li>
+            <li>20% advance required</li>
+            <li>Dates blocked only after advance payment</li>
+            <li>Travel, transportation, accommodation and outstation expenses are borne by the client</li>
+            <li>Additional services charged separately</li>
+            <li>Bridal trials are chargeable unless specified</li>
+            <li>Prices subject to change for future years</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="pricing-cta-section glass-card">
+      <div class="cta-content">
+        <h2>Ready For Your Dream Bridal Look?</h2>
+        <p>Book your date before wedding season fills up.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/918460975675?text=I%20want%20to%20book%20my%20bridal%20makeup" target="_blank" class="btn-primary">Book on WhatsApp</a>
+          <a href="tel:+918460975675" class="btn-secondary">Call Now</a>
+        </div>
+        <div class="cta-footer">
+          "Making Every Bride Feel Beautiful, Confident & Unforgettable."
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>

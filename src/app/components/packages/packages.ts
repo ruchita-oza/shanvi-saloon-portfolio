@@ -8,4 +8,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './packages.html',
   styleUrl: './packages.css'
 })
-export class PackagesComponent {}
+export class PackagesComponent {
+  openAccordionId: string | null = null;
+
+  toggleAccordion(id: string) {
+    if (this.openAccordionId === id) {
+      this.openAccordionId = null;
+    } else {
+      this.openAccordionId = id;
+    }
+  }
+}

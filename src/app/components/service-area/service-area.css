@@ -200,14 +200,15 @@
 }
 
 @media (max-width: 900px) {
+  .area-section {
+    padding: 50px 0;
+  }
   .area-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 24px;
   }
   .area-map {
-    max-width: 400px;
-    margin: 0 auto;
-    width: 100%;
+    display: none; /* Replace large maps with compact city list by hiding it */
   }
   .cities-grid {
     grid-template-columns: repeat(2, 1fr);

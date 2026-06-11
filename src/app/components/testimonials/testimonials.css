@@ -183,15 +183,31 @@
 }
 
 @media (max-width: 900px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin: 0 auto;
+  .testimonials-section {
+    padding: 50px 0;
   }
-}
-
-@media (max-width: 640px) {
+  .section-header {
+    margin-bottom: 30px;
+  }
+  .testimonials-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 24px;
+    margin: 0 -24px; /* full bleed */
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: none;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .testimonials-grid::-webkit-scrollbar {
+    display: none;
+  }
   .testimonial-card {
-    padding: 28px 24px;
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    padding: 24px 20px;
   }
 }
